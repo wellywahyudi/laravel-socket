@@ -32,3 +32,28 @@ Copy the .env.example file to .env and update the necessary environment variable
 ```sh
 cp .env.example .env
 ```
+
+Update the following variables in the .env file with your database credentials:
+```sh
+DB_CONNECTION=pgsql
+DB_HOST=localhost
+DB_PORT=5432
+DB_DATABASE=lara-socket
+DB_USERNAME=postgres
+DB_PASSWORD=
+```
+
+### 5. Run Database Migrations
+```sh
+php artisan migrate
+```
+
+### 6. Run the Application
+```sh
+php artisan serve
+```
+
+### 7. Running the Laravel Reverb
+```sh
+php artisan reverb:start
+```
