@@ -2,9 +2,16 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Events\UserRegistrations;
+use App\Models\User;
+
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/broadcast', function () {
+    broadcast(new UserRegistrations(User::find(1)));
 });
 
 Route::get('/dashboard', function () {
@@ -17,4 +24,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

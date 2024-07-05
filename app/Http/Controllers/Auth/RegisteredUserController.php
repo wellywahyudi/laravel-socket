@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
+use App\Events\UserRegistrations;
 
 class RegisteredUserController extends Controller
 {
@@ -42,6 +43,9 @@ class RegisteredUserController extends Controller
         ]);
 
         event(new Registered($user));
+
+        // brodcast to websocket
+        broadcast(new UserRegistrations($user));
 
         Auth::login($user);
 
