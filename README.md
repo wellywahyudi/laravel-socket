@@ -2,6 +2,9 @@
 
 This project demonstrates how to set up a Laravel application to handle real-time user registrations using Laravel Reverb, Echo, and Alpine.js with a Tailwind CSS slide-up transition effect.
 
+![example](https://github.com/wellywahyudi/laravel-socket/blob/main/example.gif)
+
+
 ## Prerequisites
 
 - PHP 8.2 or higher
